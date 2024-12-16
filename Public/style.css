@@ -307,3 +307,69 @@ ul li a:hover i {
         margin-right: 40px;
     }
 }
+
+
+/*Tienda*/
+
+.tienda {
+    width: 100%;
+    background-color: #000000; 
+    padding: 20px;
+}
+
+.contenedor-tienda {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.content-tienda {
+    background: #000000; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.content-tienda:hover {
+    transform: translateY(-5px);
+}
+
+.content-tienda h1 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.content-tienda img {
+    width: 100%;
+    height: 150px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.content-tienda p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contenedor-tienda {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-tienda {
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin-right: 40px;
+    }
+}
