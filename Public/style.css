@@ -1,0 +1,308 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    user-select: none;
+}
+
+h1{
+    background-color: #000000;
+    color: white;
+    text-align: center;
+}
+
+/* Botón de Hamburguesa */
+.menu-toggle {
+    font-size: 24px;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.menu-toggle:hover {
+    background-color: #333;
+}
+
+/* Menú Lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -290px; /* Oculto inicialmente */
+    width: 250px;
+    height: 100%;
+    background-color: #000; /* Negro */
+    color: white;
+    overflow-y: auto;
+    transition: left 0.3s ease, width 0.3s ease;
+    z-index: 999;
+    padding: 10px;
+}
+
+.sidebar.hidden {
+    width: 0; /* Cambiar el ancho a 0 para que no se vea */
+    overflow: hidden; /* Esconde cualquier contenido sobrante */
+}
+
+.sidebar.open {
+    left: 0; /* Mostrar menú */
+}
+
+/* Encabezado del Menú */
+.menu-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    border-bottom: 1px solid #333;
+    margin-top: 70px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.menu-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Opciones del Menú */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+ul li a i {
+    margin-right: 10px; 
+    font-size: 16px;     
+    color: white;       
+}
+
+ul li a:hover i {
+    color: #ff7f50;      
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        top: 5px;
+        left: 5px;
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    .sidebar {
+        width: 200px; /* Reduce el ancho en pantallas pequeñas */
+    }
+
+    .menu-header {
+        padding: 15px 10px;
+        margin-top: 50px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu-title {
+        font-size: 14px;
+    }
+
+    .sidebar ul li a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    ul li a i {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-toggle {
+        font-size: 18px;
+        padding: 6px;
+    }
+
+    .sidebar {
+        width: 180px; /* Más estrecho para pantallas super pequeñas */
+    }
+
+    .menu-header {
+        padding: 10px 5px;
+        margin-top: 40px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-title {
+        font-size: 12px;
+    }
+
+    .sidebar ul li a {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    ul li a i {
+        font-size: 12px;
+    }
+}
+
+/* Seccion inicial*/
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    background: url('https://wallpapers.com/images/hd/1920x1080-black-2h5i8hlebq5z3y4g.jpg') no-repeat center center/cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+}
+
+.content {
+    position: relative;
+    color: white;
+    z-index: 1;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.logo-inicio {
+    width: 150px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Sección Ejercicios */
+.ejercicios {
+    width: 100%;
+    background-color: #000000; /* Fondo gris claro */
+    padding: 20px;
+}
+
+.contenedor-ejer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Máximo 5 videos por fila */
+    gap: 20px; /* Espacio entre videos */
+    max-width: 1200px;
+    margin: 0 auto; /* Centrado */
+}
+
+.content-ejer {
+    background: #000000; /* Fondo blanco */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.content-ejer:hover {
+    transform: translateY(-5px);
+}
+
+/* Título del ejercicio */
+.content-ejer h1 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Iframe para los videos */
+.content-ejer iframe {
+    width: 100%;
+    height: 150px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Descripción */
+.content-ejer p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contenedor-ejer {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-ejer {
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin-right: 40px;
+    }
+}
